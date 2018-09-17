@@ -2,6 +2,7 @@
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -25,6 +26,23 @@ class Category
      * @ORM\Column(type="string", length=255)
      */
     private $code;
+
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\Post", mappedBy="category")
+     */
+    private $blogPosts;
+
+
+    public function __construct()
+    {
+        $this->blogPosts = new ArrayCollection();
+    }
+
+    public function getBlogPosts()
+    {
+        return $this->blogPosts;
+    }
+
 
     public function getId()
     {

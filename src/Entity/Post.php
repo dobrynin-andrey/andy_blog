@@ -47,7 +47,7 @@ class Post
     private $views;
 
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\ManyToOne(targetEntity="App\Entity\Category", inversedBy="blogPosts")
      */
     private $category;
 
