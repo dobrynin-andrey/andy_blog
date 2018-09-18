@@ -39,7 +39,7 @@ class Post
     private $date;
 
     /**
-     * @ORM\Column(type="integer", nullable=true)
+     * @ORM\Column(type="boolean", nullable=true)
      */
     private $active;
 
