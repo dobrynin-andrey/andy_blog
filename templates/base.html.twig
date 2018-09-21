@@ -7,6 +7,8 @@
     </head>
     <body>
         {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
+        {% block javascripts %}
+            {%  set codex = 'https://cdn.jsdelivr.net/npm/codex.editor.header@2.0.4'  %}
+        {% endblock %}
     </body>
 </html>

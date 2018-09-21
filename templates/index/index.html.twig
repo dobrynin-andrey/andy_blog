@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div id="codex-editor"></div>
+{% endblock %}
+
+{% block javascripts %}
+
+    {{ parent() }}
+    <script>
+        var editor = new CodexEditor({
+            /**
+             * Create a holder for the Editor and pass its ID
+             */
+            holderId : 'codex-editor',
+
+            /**
+             * Available Tools list.
+             * Pass Tool's class or Settings object for each Tool you want to use
+             */
+            tools: {
+                header: {
+                    class: Header,
+                    inlineToolbar : true
+                },
+                // ...
+            },
+
+            /**
+             * Previously saved data that should be rendered
+             */
+            data: {}
+        });
+    </script>
+
+
+{% endblock %}
