@@ -24,12 +24,15 @@ services:
             - { name: sonata.admin, manager_type: orm, label: Category }
         public: true
 
-    # Post
-    admin.post:
+    # Admin Post
+    admin.post_admin:
         class: App\Admin\PostAdmin
-        arguments: [~, App\Entity\Post, ~]
         tags:
-        - { name: sonata.admin, manager_type: orm, label: Post }
+        - { name: sonata.admin, manager_type: orm, group: Demo, label: Custom View }
+        arguments:
+        - null
+        - null
+        - App\Controller\PostAdminCRUDController
         public: true
 
 
