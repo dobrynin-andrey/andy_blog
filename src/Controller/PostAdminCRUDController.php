@@ -6,8 +6,8 @@ use Sonata\AdminBundle\Controller\CRUDController;
 
 class PostAdminCRUDController extends CRUDController
 {
-    public function listAction()
+    public function createAction()
     {
-        return $this->renderWithExtraParams('admin/post_admin.html.twig');
+        return $this->renderWithExtraParams('admin/create_post.html.twig');
     }
 }

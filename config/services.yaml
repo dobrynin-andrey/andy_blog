@@ -21,14 +21,14 @@ services:
         class: App\Admin\CategoryAdmin
         arguments: [~, App\Entity\Category, ~]
         tags:
-            - { name: sonata.admin, manager_type: orm, label: Category }
+            - { name: sonata.admin, manager_type: orm, group: Content, label: Category }
         public: true
 
     # Admin Post
     admin.post_admin:
         class: App\Admin\PostAdmin
         tags:
-        - { name: sonata.admin, manager_type: orm, group: Demo, label: Custom View }
+        - { name: sonata.admin, manager_type: orm, group: Content, label: Post }
         arguments:
         - null
         - null
