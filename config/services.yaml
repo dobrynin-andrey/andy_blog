@@ -31,7 +31,7 @@ services:
         - { name: sonata.admin, manager_type: orm, group: Content, label: Post }
         arguments:
         - null
-        - null
+        - App\Entity\Post
         - App\Controller\PostAdminCRUDController
         public: true
 
