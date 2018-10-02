@@ -1,0 +1,14 @@
+api_posts:
+  path: /posts/
+  controller: App\Controller\RestApi\PostController::list
+  methods:    [GET]
+
+api_post_show:
+  path:       /posts/{code}/
+  controller: App\Controller\RestApi\PostController::show
+  methods:    [GET, HEAD]
+
+api_post_edit:
+  path:       /posts/{code}/
+  controller: App\Controller\RestApi\PostController::edit
+  methods:    [PUT]

@@ -1,3 +1,8 @@
 index:
     path: /
     controller: App\Controller\IndexController::index
+
+# Api routing
+api:
+    prefix: /api
+    resource: 'routes/rest/api.yaml'
