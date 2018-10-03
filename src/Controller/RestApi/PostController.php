@@ -39,6 +39,55 @@ class PostController extends AbstractController
         return $this->json($response);
     }
 
+    public function processForm(Post $post) {
+
+
+    }
+
+
+    public function new(Request $request, TranslatorInterface $translator) {
+        try {
+
+            $this->isAjax($request, $translator);
+
+            $response = [];
+
+
+
+            $post = new Post();
+
+
+            $form = $this->createForm('App\Form\PostType');
+            $test = $form->handleRequest($request);
+            dump($test->getData());
+            die('test');
+
+            $form->submit($request);
+
+            if ($form->isSubmitted() && $form->isValid()) {
+                $post = $form->getData();
+
+                $entityManager = $this->getDoctrine()->getManager();
+                $entityManager->persist($post);
+                $entityManager->flush();
+                dump($post);
+                die();
+            }
+
+            $response[] = $request->get('name');
+
+
+        } catch (Exception $exception) {
+            $response['errors'][] = $exception->getMessage();
+        }
+
+
+
+        $response['success'] = 1;
+
+        return $this->json($response);
+    }
+
 
     public function edit(Request $request, TranslatorInterface $translator) {
         try {

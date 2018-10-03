@@ -1,14 +1,19 @@
 api_posts:
-  path: /posts/
+  path:       /posts/
   controller: App\Controller\RestApi\PostController::list
   methods:    [GET]
 
+api_posts_new:
+  path:       /posts/new
+  controller: App\Controller\RestApi\PostController::new
+  methods:    [POST]
+
 api_post_show:
-  path:       /posts/{code}/
+  path:       /posts/{code}
   controller: App\Controller\RestApi\PostController::show
   methods:    [GET, HEAD]
 
 api_post_edit:
-  path:       /posts/{code}/
+  path:       /posts/{code}
   controller: App\Controller\RestApi\PostController::edit
   methods:    [PUT]

@@ -33,40 +33,40 @@ class Post
      */
     private $name;
 
-    /**
-     * @ORM\Column(type="datetime")
-     */
-    private $date;
-
-    /**
-     * @ORM\Column(type="boolean", nullable=true)
-     */
-    private $active;
-
-    /**
-     * @ORM\Column(type="integer", nullable=true)
-     */
-    private $views;
-
-    /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\Category", inversedBy="blogPosts")
-     */
-    private $category;
-
-    /**
-     * @ORM\Column(type="text", nullable=true)
-     */
-    private $anons;
-
-    /**
-     * @ORM\Column(type="integer", nullable=true)
-     */
-    private $anonsPicture;
-
-    /**
-     * @ORM\Column(type="text")
-     */
-    private $body;
+//    /**
+//     * @ORM\Column(type="datetime")
+//     */
+//    private $date;
+//
+//    /**
+//     * @ORM\Column(type="boolean", nullable=true)
+//     */
+//    private $active;
+//
+//    /**
+//     * @ORM\Column(type="integer", nullable=true)
+//     */
+//    private $views;
+//
+//    /**
+//     * @ORM\ManyToOne(targetEntity="App\Entity\Category", inversedBy="blogPosts")
+//     */
+//    private $category;
+//
+//    /**
+//     * @ORM\Column(type="text", nullable=true)
+//     */
+//    private $anons;
+//
+//    /**
+//     * @ORM\Column(type="integer", nullable=true)
+//     */
+//    private $anonsPicture;
+//
+//    /**
+//     * @ORM\Column(type="text")
+//     */
+//    private $body;
 
     /**
      * @ORM\Column(type="integer")
@@ -114,99 +114,99 @@ class Post
         return $this;
     }
 
-    public function getDate(): ?\DateTimeInterface
-    {
-        return $this->date;
-    }
-
-    public function setDate(\DateTimeInterface $date): self
-    {
-        $this->date = $date;
-
-        return $this;
-    }
-
-    public function getActive(): ?int
-    {
-        return $this->active;
-    }
-
-    public function setActive(?int $active): self
-    {
-        $this->active = $active;
-
-        return $this;
-    }
-
-    public function getViews(): ?int
-    {
-        return $this->views;
-    }
-
-    public function setViews(?int $views): self
-    {
-        $this->views = $views;
-
-        return $this;
-    }
-
-    public function getCategory(): ?int
-    {
-        return $this->category;
-    }
-
-    public function setCategory(int $category): self
-    {
-        $this->category = $category;
-
-        return $this;
-    }
-
-    public function getAnons(): ?string
-    {
-        return $this->anons;
-    }
-
-    public function setAnons(?string $anons): self
-    {
-        $this->anons = $anons;
-
-        return $this;
-    }
-
-    public function getAnonsPicture(): ?int
-    {
-        return $this->anonsPicture;
-    }
-
-    public function setAnonsPicture(?int $anonsPicture): self
-    {
-        $this->anonsPicture = $anonsPicture;
-
-        return $this;
-    }
-
-    public function getBody(): ?string
-    {
-        return $this->body;
-    }
-
-    public function setBody(string $body): self
-    {
-        $this->body = $body;
-
-        return $this;
-    }
-
-    public function getDetailPicture(): ?int
-    {
-        return $this->detailPicture;
-    }
-
-    public function setDetailPicture(int $detailPicture): self
-    {
-        $this->detailPicture = $detailPicture;
-
-        return $this;
-    }
+//    public function getDate(): ?\DateTimeInterface
+//    {
+//        return $this->date;
+//    }
+//
+//    public function setDate(\DateTimeInterface $date): self
+//    {
+//        $this->date = $date;
+//
+//        return $this;
+//    }
+//
+//    public function getActive(): ?int
+//    {
+//        return $this->active;
+//    }
+//
+//    public function setActive(?int $active): self
+//    {
+//        $this->active = $active;
+//
+//        return $this;
+//    }
+//
+//    public function getViews(): ?int
+//    {
+//        return $this->views;
+//    }
+//
+//    public function setViews(?int $views): self
+//    {
+//        $this->views = $views;
+//
+//        return $this;
+//    }
+//
+//    public function getCategory(): ?int
+//    {
+//        return $this->category;
+//    }
+//
+//    public function setCategory(int $category): self
+//    {
+//        $this->category = $category;
+//
+//        return $this;
+//    }
+//
+//    public function getAnons(): ?string
+//    {
+//        return $this->anons;
+//    }
+//
+//    public function setAnons(?string $anons): self
+//    {
+//        $this->anons = $anons;
+//
+//        return $this;
+//    }
+//
+//    public function getAnonsPicture(): ?int
+//    {
+//        return $this->anonsPicture;
+//    }
+//
+//    public function setAnonsPicture(?int $anonsPicture): self
+//    {
+//        $this->anonsPicture = $anonsPicture;
+//
+//        return $this;
+//    }
+//
+//    public function getBody(): ?string
+//    {
+//        return $this->body;
+//    }
+//
+//    public function setBody(string $body): self
+//    {
+//        $this->body = $body;
+//
+//        return $this;
+//    }
+//
+//    public function getDetailPicture(): ?int
+//    {
+//        return $this->detailPicture;
+//    }
+//
+//    public function setDetailPicture(int $detailPicture): self
+//    {
+//        $this->detailPicture = $detailPicture;
+//
+//        return $this;
+//    }
 }
