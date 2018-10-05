@@ -5,6 +5,9 @@
     "cocur/slugify": {
         "version": "v3.1"
     },
+    "codex-team/codex.editor": {
+        "version": "dev-master"
+    },
     "doctrine/annotations": {
         "version": "1.0",
         "recipe": {
@@ -82,6 +85,9 @@
     },
     "egulias/email-validator": {
         "version": "2.1.4"
+    },
+    "ezyang/htmlpurifier": {
+        "version": "v4.10.0"
     },
     "fig/link-util": {
         "version": "1.0.0"

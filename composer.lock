@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "15b4bcf9ce32142b18787aa7a6ad095c",
+    "content-hash": "bf1abfa30a0362ef399c8c8180d5b775",
     "packages": [
         {
             "name": "behat/transliterator",
@@ -114,6 +114,47 @@
                 "slugify"
             ],
             "time": "2018-01-22T09:00:48+00:00"
+        },
+        {
+            "name": "codex-team/codex.editor",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/codex-team/codex.editor.backend.git",
+                "reference": "6d93e15cbd2d30d662145a938a65a0ba880b52d0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/codex-team/codex.editor.backend/zipball/6d93e15cbd2d30d662145a938a65a0ba880b52d0",
+                "reference": "6d93e15cbd2d30d662145a938a65a0ba880b52d0",
+                "shasum": ""
+            },
+            "require": {
+                "ezyang/htmlpurifier": "^4.8",
+                "php": ">=5.6"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^2.13",
+                "phpunit/phpunit": "5.4.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "CodexEditor\\": "CodexEditor"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "CodeX Team",
+                    "email": "team@ifmo.su"
+                }
+            ],
+            "description": "Codex Editor server side example",
+            "time": "2018-09-30T08:19:27+00:00"
         },
         {
             "name": "doctrine/annotations",
@@ -1335,6 +1376,53 @@
                 "validator"
             ],
             "time": "2018-08-16T20:49:45+00:00"
+        },
+        {
+            "name": "ezyang/htmlpurifier",
+            "version": "v4.10.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ezyang/htmlpurifier.git",
+                "reference": "d85d39da4576a6934b72480be6978fb10c860021"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ezyang/htmlpurifier/zipball/d85d39da4576a6934b72480be6978fb10c860021",
+                "reference": "d85d39da4576a6934b72480be6978fb10c860021",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.2"
+            },
+            "require-dev": {
+                "simpletest/simpletest": "^1.1"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "HTMLPurifier": "library/"
+                },
+                "files": [
+                    "library/HTMLPurifier.composer.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "LGPL"
+            ],
+            "authors": [
+                {
+                    "name": "Edward Z. Yang",
+                    "email": "admin@htmlpurifier.org",
+                    "homepage": "http://ezyang.com"
+                }
+            ],
+            "description": "Standards compliant HTML filter written in PHP",
+            "homepage": "http://htmlpurifier.org/",
+            "keywords": [
+                "html"
+            ],
+            "time": "2018-02-23T01:58:20+00:00"
         },
         {
             "name": "fig/link-util",
@@ -8150,6 +8238,7 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
+        "codex-team/codex.editor": 20,
         "symfony/lts": 20
     },
     "prefer-stable": false,

@@ -63,27 +63,27 @@ class Post
 //     */
 //    private $anonsPicture;
 //
-//    /**
-//     * @ORM\Column(type="text")
-//     */
-//    private $body;
-
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="text")
      */
-    private $detailPicture;
+    private $body;
+
+//    /**
+//     * @ORM\Column(type="integer")
+//     */
+//    private $detailPicture;
 
     public function getId()
     {
         return $this->id;
     }
 
-    public function getType(): ?int
+    public function getType(): ?string
     {
         return $this->type;
     }
 
-    public function setType(int $type): self
+    public function setType(string $type): self
     {
         $this->type = $type;
 
@@ -186,17 +186,17 @@ class Post
 //        return $this;
 //    }
 //
-//    public function getBody(): ?string
-//    {
-//        return $this->body;
-//    }
-//
-//    public function setBody(string $body): self
-//    {
-//        $this->body = $body;
-//
-//        return $this;
-//    }
+    public function getBody(): ?string
+    {
+        return $this->body;
+    }
+
+    public function setBody(string $body): self
+    {
+        $this->body = $body;
+
+        return $this;
+    }
 //
 //    public function getDetailPicture(): ?int
 //    {

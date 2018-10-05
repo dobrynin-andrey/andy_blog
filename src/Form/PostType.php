@@ -15,14 +15,14 @@ class PostType extends AbstractType
             ->add('type')
             ->add('code')
             ->add('name')
-            ->add('date')
-            ->add('active')
-            ->add('views')
-            ->add('category')
-            ->add('anons')
-            ->add('anonsPicture')
+//            ->add('date')
+//            ->add('active')
+//            ->add('views')
+//            ->add('category')
+//            ->add('anons')
+//            ->add('anonsPicture')
             ->add('body')
-            ->add('detailPicture')
+//            ->add('detailPicture')
         ;
     }
 

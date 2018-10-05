@@ -57,12 +57,24 @@ class PostController extends AbstractController
             $post = new Post();
 
 
-            $form = $this->createForm('App\Form\PostType');
-            $test = $form->handleRequest($request);
-            dump($test->getData());
-            die('test');
+            $form = $this->createForm('App\Form\PostType', $post);
 
-            $form->submit($request);
+            dump($request->request);
+            dump($form->getName());
+            dump($request->request->all());
+            dump($request->request->get('form'));
+
+            $form->submit($request->request->get('form'));
+//            dump($request);
+//            dump($form);
+
+            dump($form->isSubmitted());
+            foreach ($form->getErrors(true, false) as $error) {
+                //throw new Exception($error);
+                dump($error->getMessage());
+            }
+
+            dd($form->isValid());
 
             if ($form->isSubmitted() && $form->isValid()) {
                 $post = $form->getData();
@@ -71,6 +83,7 @@ class PostController extends AbstractController
                 $entityManager->persist($post);
                 $entityManager->flush();
                 dump($post);
+                dump($entityManager);
                 die();
             }
 
