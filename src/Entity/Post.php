@@ -7,6 +7,7 @@ use Gedmo\Mapping\Annotation as Gedmo;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\PostRepository")
+ * @ORM\HasLifecycleCallbacks()
  */
 class Post
 {
@@ -33,31 +34,41 @@ class Post
      */
     private $name;
 
-//    /**
-//     * @ORM\Column(type="datetime")
-//     */
-//    private $date;
-//
-//    /**
-//     * @ORM\Column(type="boolean", nullable=true)
-//     */
-//    private $active;
-//
+    /**
+     * @ORM\Column(type="datetime")
+     */
+    private $dateCreate;
+
+    /**
+     * @ORM\Column(type="date", nullable=true)
+     */
+    private $datePublish;
+
+    /**
+     * @ORM\Column(type="boolean", nullable=true)
+     */
+    private $active;
+
 //    /**
 //     * @ORM\Column(type="integer", nullable=true)
 //     */
 //    private $views;
 //
-//    /**
-//     * @ORM\ManyToOne(targetEntity="App\Entity\Category", inversedBy="blogPosts")
-//     */
-//    private $category;
-//
-//    /**
-//     * @ORM\Column(type="text", nullable=true)
-//     */
-//    private $anons;
-//
+    /**
+     * @var Category
+     *
+     * @ORM\ManyToOne(targetEntity="App\Entity\Category")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="category", referencedColumnName="id")
+     * })
+     */
+    private $category;
+
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $anons;
+
 //    /**
 //     * @ORM\Column(type="integer", nullable=true)
 //     */
@@ -72,6 +83,11 @@ class Post
 //     * @ORM\Column(type="integer")
 //     */
 //    private $detailPicture;
+
+    public function __construct()
+    {
+        $this->setDateCreate(new \DateTime());
+    }
 
     public function getId()
     {
@@ -114,30 +130,40 @@ class Post
         return $this;
     }
 
-//    public function getDate(): ?\DateTimeInterface
-//    {
-//        return $this->date;
-//    }
-//
-//    public function setDate(\DateTimeInterface $date): self
-//    {
-//        $this->date = $date;
-//
-//        return $this;
-//    }
-//
-//    public function getActive(): ?int
-//    {
-//        return $this->active;
-//    }
-//
-//    public function setActive(?int $active): self
-//    {
-//        $this->active = $active;
-//
-//        return $this;
-//    }
-//
+    public function getDateCreate(): ?\DateTimeInterface
+    {
+        return $this->dateCreate;
+    }
+
+    public function setDateCreate(\DateTimeInterface $dateCreate): self
+    {
+        $this->dateCreate = $dateCreate;
+
+        return $this;
+    }
+
+    public function getDatePublish()
+    {
+        return $this->datePublish;
+    }
+
+    public function setDatePublish($datePublish): void
+    {
+        $this->datePublish = $datePublish;
+    }
+
+    public function getActive(): ?bool
+    {
+        return $this->active;
+    }
+
+    public function setActive(?bool $active): self
+    {
+        $this->active = $active;
+
+        return $this;
+    }
+
 //    public function getViews(): ?int
 //    {
 //        return $this->views;
@@ -149,30 +175,30 @@ class Post
 //
 //        return $this;
 //    }
-//
-//    public function getCategory(): ?int
-//    {
-//        return $this->category;
-//    }
-//
-//    public function setCategory(int $category): self
-//    {
-//        $this->category = $category;
-//
-//        return $this;
-//    }
-//
-//    public function getAnons(): ?string
-//    {
-//        return $this->anons;
-//    }
-//
-//    public function setAnons(?string $anons): self
-//    {
-//        $this->anons = $anons;
-//
-//        return $this;
-//    }
+
+    public function getCategory(): ?Category
+    {
+        return $this->category;
+    }
+
+    public function setCategory(Category $category): self
+    {
+        $this->category = $category;
+
+        return $this;
+    }
+
+    public function getAnons(): ?string
+    {
+        return $this->anons;
+    }
+
+    public function setAnons(?string $anons): self
+    {
+        $this->anons = $anons;
+
+        return $this;
+    }
 //
 //    public function getAnonsPicture(): ?int
 //    {

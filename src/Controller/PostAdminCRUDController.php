@@ -3,16 +3,8 @@
 namespace App\Controller;
 
 use App\Entity\Post;
+use App\Form\PostType;
 use Sonata\AdminBundle\Controller\CRUDController;
-use Symfony\Bridge\Doctrine\Form\Type\EntityType;
-use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
-use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
-use Symfony\Component\Form\Extension\Core\Type\FileType;
-use Symfony\Component\Form\Extension\Core\Type\HiddenType;
-use Symfony\Component\Form\Extension\Core\Type\SubmitType;
-use Symfony\Component\Form\Extension\Core\Type\TextareaType;
-use Symfony\Component\Form\Extension\Core\Type\TextType;
-use Symfony\Component\Translation\Translator;
 
 class PostAdminCRUDController extends CRUDController
 {
@@ -20,24 +12,7 @@ class PostAdminCRUDController extends CRUDController
     {
         $post = new Post();
 
-        $form = $this->createFormBuilder($post)
-            ->add('type', ChoiceType::class, [
-                'choices' => [
-                    'Статья' => 'post',
-                    'Тест'   => 'test'
-                ]
-            ])
-            ->add('name', TextType::class)
-            ->add('code', TextType::class, ['required' => false])
-            ->add('body', HiddenType::class, ['attr' => ['class' => 'js-codex-editor__body', 'hidden' => true]])
-            //->add('active', CheckboxType::class, ['required' => false])
-            //->add('category', EntityType::class)
-            //->add('anons', TextareaType::class)
-            //->add('anonsPicture', FileType::class)
-            //->add('detailPicture', FileType::class)
-//            ->add('submit', SubmitType::class)
-            ->getForm();
-
+        $form = $this->createForm(PostType::class, $post);
 
         $request = $this->getRequest();
 
@@ -51,6 +26,8 @@ class PostAdminCRUDController extends CRUDController
             $entityManager->flush();
 
             $this->getRequest()->getSession()->getFlashBag()->add("success", 'Элемент создан успешно');
+
+            return $this->redirectToRoute('post_admin_list');
 
         }
 
@@ -71,23 +48,7 @@ class PostAdminCRUDController extends CRUDController
 
         $post = $em->getRepository(Post::class)->find($id);
 
-        $form = $this->createFormBuilder($post)
-            ->add('type', ChoiceType::class, [
-                'choices' => [
-                    'Статья' => 'post',
-                    'Тест'   => 'test'
-                ]
-            ])
-            ->add('name', TextType::class)
-            ->add('code', TextType::class, ['required' => false])
-            ->add('body', HiddenType::class, ['attr' => ['class' => 'js-codex-editor__body', 'hidden' => true]])
-            //->add('active', CheckboxType::class, ['required' => false])
-            //->add('category', EntityType::class)
-            //->add('anons', TextareaType::class)
-            //->add('anonsPicture', FileType::class)
-            //->add('detailPicture', FileType::class)
-//            ->add('submit', SubmitType::class)
-            ->getForm();
+        $form = $this->createForm(PostType::class, $post);
 
         $request = $this->getRequest();
 

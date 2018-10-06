@@ -149,7 +149,7 @@
 
                 event.preventDefault();
 
-                let form = $('form[name=form]');
+                let form = $('form[name=post]');
                 let formBody = form.find('.js-codex-editor__body');
 
                 editor.saver.save().then((savedData) => {
@@ -161,7 +161,7 @@
 
             function getBlocks() {
 
-                let form = $('form[name=form]');
+                let form = $('form[name=post]');
                 let formBody = form.find('.js-codex-editor__body');
 
                 return JSON.parse(formBody.val() ? formBody.val() : '{}');

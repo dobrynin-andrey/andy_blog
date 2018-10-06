@@ -29,23 +29,6 @@ class Category
      */
     private $code;
 
-    /**
-     * @ORM\OneToMany(targetEntity="App\Entity\Post", mappedBy="category")
-     */
-    private $blogPosts;
-
-
-    public function __construct()
-    {
-        $this->blogPosts = new ArrayCollection();
-    }
-
-    public function getBlogPosts()
-    {
-        return $this->blogPosts;
-    }
-
-
     public function getId()
     {
         return $this->id;
@@ -73,5 +56,10 @@ class Category
         $this->code = $code;
 
         return $this;
+    }
+
+    public function __toString()
+    {
+        return $this->name;
     }
 }
