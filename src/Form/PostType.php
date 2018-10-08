@@ -3,6 +3,7 @@
 namespace App\Form;
 
 use App\Entity\Post;
+use Sonata\CoreBundle\Form\Type\DatePickerType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -25,7 +26,7 @@ class PostType extends AbstractType
                     'required' => false
                 ]
             )
-            ->add('datePublish', null,
+            ->add('datePublish', DatePickerType::class,
                 ['label' => 'Дата публикации',
                     'format' => 'd.M.y'
                 ]
