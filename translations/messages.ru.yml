@@ -1,2 +1,14 @@
 'Not xml http request': 'Запрос не xml http'
 'Not known method': 'Не известный метод'
+Id: Id
+Type: Тип
+Name: Название
+Code: 'Символьный код'
+Post: Статья
+'Post List': 'Список статей'
+Category: Категория
+'Category List': 'Список категоий'
+Active: Активность
+'Date publish': 'Дата публикаций'
+Anons: Анонос
+Content: Контент

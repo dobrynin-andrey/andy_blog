@@ -22,29 +22,24 @@ class PostType extends AbstractType
         $builder
             ->add('active', null,
                 [
-                    'label' =>'Активность',
                     'required' => false
                 ]
             )
             ->add('datePublish', DatePickerType::class,
-                ['label' => 'Дата публикации',
+                [
                     'format' => 'd.M.y'
                 ]
             )
             ->add('type', ChoiceType::class,
                 [
-                    'label' => 'Тип',
                     'choices' => [
-                        'Статья' => 'post',
-                        'Тест'   => 'test'
+                        'Post'   => 'post',
+                        'Test'   => 'test'
                 ]
             ])
-            ->add('name', TextType::class,
-                ['label' => 'Название']
-            )
+            ->add('name', TextType::class)
             ->add('code', TextType::class,
                 [
-                    'label'=> 'Символьный код',
                     'required' => false
                 ]
             )
@@ -58,15 +53,10 @@ class PostType extends AbstractType
             )
             ->add('category', null,
                 [
-                    'label' => 'Категория',
                     'required' => true
                 ]
             )
-            ->add('anons', TextareaType::class,
-                [
-                    'label' => 'Анонс'
-                ]
-            )
+            ->add('anons', TextareaType::class)
             //->add('anonsPicture', FileType::class)
             //->add('detailPicture', FileType::class)
         ;
